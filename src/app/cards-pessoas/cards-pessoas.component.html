@@ -1,0 +1,51 @@
+<ion-content *ngIf="exitemPessoasParaVotar()">
+
+  <ion-slides #cardsPessoas [options]="slideOpts" (ionSlideWillChange)="alterouSlide($event)"
+    (ionSlideDoubleTap)="clicouNaFoto($event)" (ionSlideDrag)="iniciouArrastar($event)"
+    (ionSlideTouchEnd)="soltouTouch()">
+    <ion-slide *ngFor="let pessoa of pessoas">
+      <ion-grid class="fotos">
+        <ion-row>
+          <ion-col *ngFor="let foto of pessoa.fotos; let i = index;" #cardsPessoas>
+            <div class="foto-atual" *ngIf="i === indexFoto"></div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div class="gostei" *ngIf="iniciouGostei">
+        <span>Gostei</span>
+      </div>
+
+      <div class="nao-gostei" *ngIf="iniciouNaoGostei">
+        <span>Não gostei</span>
+      </div>
+
+      <div class="dados-pessoa">
+        <span>{{pessoa.nome}} <span class="idade">{{pessoa.idade}}</span> </span>
+      </div>
+
+      <ion-img [src]="pessoa.fotos[indexFoto]">
+      </ion-img>
+
+    </ion-slide>
+  </ion-slides>
+
+  <div class="container-botoes">
+    <div class="botoes-acao">
+      <ion-fab-button size="medium" class="icone-recusar" [disabled]="!exitemPessoasParaVotar()" (click)="darNaoGostei()">
+        <ion-icon name="close" size="large"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button size="small" class="icone-superlike" [disabled]="!exitemPessoasParaVotar()">
+        <ion-icon name="star" size="small"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button size="medium" class="icone-like" [disabled]="!exitemPessoasParaVotar()" (click)="darGostei()">
+        <ion-icon name="heart" size="large"></ion-icon>
+      </ion-fab-button>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-content *ngIf="!exitemPessoasParaVotar()" class="buscando-conexoes">
+  <h5><ion-icon name="planet-outline" style="zoom: 2.0; color: primary"></ion-icon><span> Aguarde enquanto buscamos mais conexões...</span></h5>
+</ion-content>

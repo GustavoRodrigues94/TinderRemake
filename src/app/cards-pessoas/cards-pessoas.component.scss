@@ -1,0 +1,124 @@
+ion-slides {
+  height: 85%;
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}
+
+ion-img{
+  margin-top: 0px !important;
+  height: 100%;
+  width: 100%;
+  display: block !important;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: inset 0 0 2px #d1d1d1;
+}
+.container-botoes{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.botoes-acao{
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.icone-recusar{
+  --background: white;
+  --color: #FD5068;
+}
+
+.icone-superlike{
+  --background: white;
+  --color: #3dc2ff;
+}
+
+.icone-like{
+  --background: white;
+  --color: #24E5A8;
+}
+
+ion-icon { zoom: 1.3 }
+
+.fotos{
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  width: 100%;
+
+  ion-col{
+    height: 3px;
+    background-color: #999;
+    border-radius: 6px;
+    padding: 0px;
+    margin: 0px 3px 0px 3px;
+  }
+
+  .foto-atual{
+    height: 100%;
+    background-color: #FD5068;
+  }
+}
+
+.gostei{
+  height: 5px;
+  position: absolute;
+  top: 35px;
+  right: 15px;
+  font-size: 30px;
+  color: #24E5A8;
+  span{
+    border: 1px solid #24E5A8;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
+.nao-gostei{
+  height: 5px;
+  position: absolute;
+  bottom: 60px;
+  font-size: 30px;
+  color: #FD5068;
+  top: 35px;
+  left: 15px;
+  span{
+    border: 1px solid #FD5068;;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
+.dados-pessoa{
+  position: absolute;
+  font-size: 25px;
+  color: white;
+  bottom: 10px;
+  left: 10px;
+  text-shadow: 0.1em 0.1em 0.2em black;
+  span .idade{
+    font-size: 20px;
+  }
+}
+
+.buscando-conexoes{
+  display: flex;
+  height: 100%;
+  h5 {
+    height: 100%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #9d9fa6;
+  }
+}
+
+
